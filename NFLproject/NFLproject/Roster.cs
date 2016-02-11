@@ -16,16 +16,16 @@ namespace NFLproject
         List<Player> PlayerOptions = new List<Player>();
         public void MakePlayersList()
         {
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("J.J. Watt", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            PlayerOptions.Add(new Quarterback("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("J.J. Watt", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
 
         }
         public double CalcAverageRating(double overallrating, int numofplayers)
