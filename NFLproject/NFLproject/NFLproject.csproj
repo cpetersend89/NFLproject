@@ -45,8 +45,6 @@
   <ItemGroup>
     <Compile Include="FileReader.cs" />
     <Compile Include="FileWriter.cs" />
-    <Compile Include="IRead.cs" />
-    <Compile Include="IWrite.cs" />
     <Compile Include="League.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PositionCategory.cs" />

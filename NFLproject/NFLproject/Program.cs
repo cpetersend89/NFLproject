@@ -12,7 +12,9 @@ namespace NFLproject
         {
             Roster test = new Roster();
             test.MakePlayersList();
-            
+            test.WriteRoster(@"../../Test.txt");
+            test.ReadRoster(@"../../Test.txt");
+
             Console.ReadLine();
         }
     }

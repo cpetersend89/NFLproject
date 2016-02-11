@@ -7,15 +7,20 @@ using System.Threading.Tasks;
 
 namespace NFLproject
 {
-    class FileWriter : IWrite
+    class FileWriter
     {
-        public void WriteToFile(string path, List<Roster> WriteRoster)
+        private string Path;
+        public FileWriter(string _path)
         {
-            using (StreamWriter _streamwriter = new StreamWriter(path))
+            Path = _path;
+        }
+        public void WriteToFile(string text)
+        {
+            using (FileStream fs = new FileStream(Path, FileMode.Create, FileAccess.Write))
             {
-                foreach (Roster roster in WriteRoster)
+                using (StreamWriter sw = new StreamWriter(fs))
                 {
-                    _streamwriter.WriteLine(roster);
+                    sw.WriteLine(text);
                 }
             }
         }

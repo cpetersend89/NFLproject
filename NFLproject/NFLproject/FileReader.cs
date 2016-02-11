@@ -7,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace NFLproject
 {
-    class FileReader : IRead
+    class FileReader
     {
-        public void ReadFile(string path)
+        private string _path;
+        public FileReader(string pathName)
         {
-            string line;
-            using (StreamReader _streamreader = new StreamReader(path))
+            _path = pathName;
+        }
+
+        public string ReadFromFile()
+        {
+            using (FileStream fs = new FileStream(_path, FileMode.Open, FileAccess.Read))
             {
-                line = _streamreader.ReadLine();
+                using (StreamReader sr = new StreamReader(fs))
+                {
+                    return sr.ReadToEnd();
+                }
             }
-            Console.WriteLine();
         }
     }
 }
