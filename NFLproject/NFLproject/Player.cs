@@ -37,5 +37,9 @@ namespace NFLproject
         {
             Console.WriteLine("Player Action");
         }
+        public override string ToString()
+        {
+            return Name + " " + Age + " " + Weight + " " + Position + " " + OverallRating;
+        }
     }
 }

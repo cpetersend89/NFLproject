@@ -15,13 +15,17 @@ namespace NFLproject
         {
 
         }
-        public WideReceiver(string _name, int _age, double _weight, string _position, double _overallrating)
+        public WideReceiver(string _name, int _age, double _weight, string _position, double receptions, double recyards, double rectouchdowns)
         {
             this.Name = _name;
             this.Age = _age;
             this.Weight = _weight;
             this.Position = _position;
-            this.OverallRating = _overallrating;
+            WideReceiver widereceiver = new WideReceiver();
+            widereceiver.Receptions = receptions;
+            widereceiver.ReceivingYards = recyards;
+            widereceiver.ReceivingTouchdowns = rectouchdowns;
+            this.OverallRating = CalcOverallRating(widereceiver.Receptions, widereceiver.ReceivingYards, widereceiver.ReceivingTouchdowns);
         }
         public double Receptions
         {
@@ -37,15 +41,6 @@ namespace NFLproject
         {
             get { return this._receivingTouchdowns; }
             set { this._receivingTouchdowns = value; }
-        }
-        public double CalcPlayerStats(double statone, double stattwo, double statthree)
-        {
-            WideReceiver widereceiver = new WideReceiver();
-            widereceiver.Receptions = statone;
-            widereceiver.ReceivingYards = stattwo;
-            widereceiver.ReceivingTouchdowns = statthree;
-            double averagestats = CalcOverallRating(widereceiver.Receptions, widereceiver.ReceivingYards, widereceiver.ReceivingTouchdowns);
-            return averagestats;
         }
         public override void PlayerInAction()
         {

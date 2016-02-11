@@ -16,16 +16,17 @@ namespace NFLproject
         List<Player> PlayerOptions = new List<Player>();
         public void MakePlayersList()
         {
-            PlayerOptions.Add(new Quarterback("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("J.J. Watt", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
-            //PlayerOptions.Add(new Player("Aaron Rodgers", 32, 196.5, "quarterback", 8.2));
+            
+            RunningBack runningback = new RunningBack();
+            WideReceiver widereceiver = new WideReceiver();
+            PlayerOptions.Add(new Quarterback("Russell Wilson", 27, 206, "Quarterback", 61.4, 52.3, 26));
+            PlayerOptions.Add(new RunningBack("Adrian Patterson", 30, 220, "Runningback", 2381, 11675, 97));
+            PlayerOptions.Add(new WideReceiver("Julio Jones", 27, 220, "Wide Receiver", 414, 6201, 34));
+
+            foreach(Player player in PlayerOptions)
+            {
+                Console.WriteLine(player);
+            }
 
         }
         public double CalcAverageRating(double overallrating, int numofplayers)

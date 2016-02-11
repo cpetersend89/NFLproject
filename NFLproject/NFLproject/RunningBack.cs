@@ -17,13 +17,19 @@ namespace NFLproject
 
         }
 
-        public RunningBack(string _name, int _age, double _weight, string _position, double _overallrating)
+        public RunningBack(string _name, int _age, double _weight, string _position, double rushattempt, double rushyards, double rushtouchdown)
         {
             this.Name = _name;
             this.Age = _age;
             this.Weight = _weight;
-            this.Position = _position;
-            this.OverallRating = _overallrating;
+            this.Position = _position; 
+            RunningBack runningback = new RunningBack();
+            runningback.RushingAttempts = rushattempt;
+            runningback.RushingYards = rushyards;
+            runningback.RushingTouchdowns = rushtouchdown;
+            this.OverallRating = CalcOverallRating(runningback.RushingAttempts, runningback.RushingYards, runningback.RushingTouchdowns);
+
+
         }
         public double RushingAttempts
         {
@@ -40,19 +46,11 @@ namespace NFLproject
             get { return this._rushingTouchdowns; }
             set { this._rushingTouchdowns = value; }
         }
-        public double CalcPlayerStats(double statone, double stattwo, double statthree)
-        {
-            RunningBack runningback = new RunningBack();
-            runningback.RushingAttempts = statone;
-            runningback.RushingYards = stattwo;
-            runningback.RushingTouchdowns = statthree;
-            double averagestats = CalcOverallRating(runningback.RushingAttempts, runningback.RushingYards, runningback.RushingTouchdowns);
-            return averagestats;
-        }
 
         public override void PlayerInAction()
         {
             Console.WriteLine("Rushes");
         }
+
     }
 }

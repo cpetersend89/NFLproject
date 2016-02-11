@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NFLproject
 {
-    class Quarterback : Player
+    public class Quarterback : Player
     {
         private double _passingPercentage { get; set; }
         private double _passerRating { get; set; }
@@ -15,13 +15,17 @@ namespace NFLproject
         {
 
         }
-        public Quarterback(string _name, int _age, double _weight, string _position, double _overallrating)
+        public Quarterback(string _name, int _age, double _weight, string _position, double passpercent, double passrate, double touchdowns)
         {
             this.Name = _name;
             this.Age = _age;
             this.Weight = _weight;
             this.Position = _position;
-            this.OverallRating = _overallrating;
+            Quarterback quarterback = new Quarterback();
+            quarterback.PassingPercentage = passpercent;
+            quarterback.PasserRating = passrate;
+            quarterback.TouchDowns = touchdowns;
+            OverallRating = CalcOverallRating(quarterback.PassingPercentage, quarterback.PasserRating, quarterback.TouchDowns);
         }
         public double PassingPercentage
         {
@@ -39,22 +43,19 @@ namespace NFLproject
             set { this._touchDowns = value; }
         }
         
-        public void CalcPlayerStats(double statone, double stattwo, double statthree)
+        public double CalcPlayerStats(double passpercent, double passrate, double touchdowns)
         {
             Quarterback quarterback = new Quarterback();
-            quarterback.PassingPercentage = statone;
-            quarterback.PasserRating = stattwo;
-            quarterback.TouchDowns = statthree;
+            quarterback.PassingPercentage = passpercent;
+            quarterback.PasserRating = passrate;
+            quarterback.TouchDowns = touchdowns;
             double averagestats = CalcOverallRating(quarterback.PassingPercentage, quarterback.PasserRating, quarterback.TouchDowns);
-        }
-        
-        public void MakeQuarterbackList()
-        {
-            
+            return averagestats;
         }
         public override void PlayerInAction()
         {
             Console.WriteLine("Passes");
         }
+
     }
 }

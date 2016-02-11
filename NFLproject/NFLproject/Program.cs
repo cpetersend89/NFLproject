@@ -10,9 +10,9 @@ namespace NFLproject
     {
         static void Main(string[] args)
         {
-            Quarterback test = new Quarterback();
-            test.CalcPlayerStats(12.2, 15.3, 10.5);
-            Console.WriteLine(test);
+            Roster test = new Roster();
+            test.MakePlayersList();
+            
             Console.ReadLine();
         }
     }
