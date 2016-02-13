@@ -16,11 +16,11 @@ namespace NFLproject
         }
         public void WriteToFile(string text)
         {
-            using (FileStream fs = new FileStream(Path, FileMode.Create, FileAccess.Write))
+            using (FileStream filestream = new FileStream(Path, FileMode.Append, FileAccess.Write))
             {
-                using (StreamWriter sw = new StreamWriter(fs))
+                using (StreamWriter streamwriter = new StreamWriter(filestream))
                 {
-                    sw.WriteLine(text);
+                    streamwriter.WriteLine(text);
                 }
             }
         }

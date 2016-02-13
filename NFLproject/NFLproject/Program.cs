@@ -10,10 +10,10 @@ namespace NFLproject
     {
         static void Main(string[] args)
         {
-            Roster test = new Roster();
-            test.MakePlayersList();
-            test.WriteRoster(@"../../Test.txt");
-            test.ReadRoster(@"../../Test.txt");
+            Roster myteam = new Roster();
+            myteam.MakePlayersList();
+            myteam.WriteRoster(@"../../Roster.txt");
+            myteam.ReadRoster(@"../../Roster.txt");
 
             Console.ReadLine();
         }
